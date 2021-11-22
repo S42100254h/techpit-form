@@ -6,5 +6,5 @@ export type Profile = {
   description: string;
   birthday: string;
   gender: Gender;
-  addrss: Address;
+  address: Address;
 };
