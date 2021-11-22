@@ -65,6 +65,8 @@ const Basic = () => {
         className={classes.formField}
         label={PROFILE.BIRTHDAY}
         type="date"
+        value={profile.birthday}
+        onChange={e => handleChange({ birthday: e.target.value })}
         InputLabelProps={{
           shrink: true
         }}
