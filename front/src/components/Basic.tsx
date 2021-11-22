@@ -60,6 +60,15 @@ const Basic = () => {
           />
         </RadioGroup>
       </FormControl>
+      <TextField
+        fullWidth
+        className={classes.formField}
+        label={PROFILE.BIRTHDAY}
+        type="date"
+        InputLabelProps={{
+          shrink: true
+        }}
+      />
     </>
   );
 };
