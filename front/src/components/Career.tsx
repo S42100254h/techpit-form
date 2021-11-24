@@ -20,6 +20,10 @@ const Career = () => {
     dispatch(profileActions.addCareer({}));
   };
   
+  const handleDeleteCareer = (i: number) => {
+    dispatch(profileActions.deleteCareer(i));
+  };
+  
   return (
     <>
       {careers.map((c, i) => (
@@ -74,6 +78,15 @@ const Career = () => {
               </Grid>
             </Grid>
           </div>
+          <Button
+            className={classes.button}
+            onClick={() => handleDeleteCareer(i)}
+            fullWidth
+            variant="outlined"
+            color="secondary"
+          >
+            職歴{i + 1}を削除
+          </Button>
         </Fragment>
       ))}
       <Button
