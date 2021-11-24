@@ -7,6 +7,7 @@ import { Address as IAddress } from "../domain/entity/address";
 import useStyles from "./styles";
 import profileActions from "../store/profile/actions";
 import { isPostalcode } from "../domain/services/address";
+import { serachAddressFromPostalcode } from "../store/profile/effects";
 
 const Address = () => {
   const classes = useStyles();
@@ -22,6 +23,7 @@ const Address = () => {
       return;
     } else {
       dispatch(profileActions.setAddress({ postalcode: code }));
+      dispatch(serachAddressFromPostalcode(code));
     }
   };
 
