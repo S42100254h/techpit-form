@@ -15,6 +15,11 @@ const init: Profile = {
     restAddress: "",
   },
   careers: [],
+  college: {
+    name: "",
+    faculty: "",
+    department: "",
+  },
 };
 
 const initCareer: Career = {
