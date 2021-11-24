@@ -5,12 +5,14 @@ import { Career as ICareer } from "../domain/entity/career";
 import profileActions from "../store/profile/actions";
 import { TextField, Grid, InputLabel, Typography, Button } from "@material-ui/core";
 import { PROFILE } from "../domain/services/profile";
+import { exitEmptyCareers } from "../domain/services/career";
 import useStyles from "./styles";
 
 const Career = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
   const careers = useSelector((state: RootState) => state.profile.careers);
+  const isAbleToAddCareer = exitEmptyCareers(careers);
   
   const handleChange = (member: Partial<ICareer>, i: number) => {
     dispatch(profileActions.setCareer({ career: member, index: i }));
@@ -94,6 +96,7 @@ const Career = () => {
         onClick={handleAddCareer}
         fullWidth
         variant="outlined"
+        disabled={isAbleToAddCareer}
       >
         職歴を追加
       </Button>
