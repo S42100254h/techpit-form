@@ -32,7 +32,7 @@ const Career = () => {
             fullWidth
             label={PROFILE.CAREERS.COMPANY}
             value={c.company}
-            onChange={e => handleChange({ position: e.target.value }, i)}
+            onChange={e => handleChange({ company: e.target.value }, i)}
           />
           <TextField
             className={classes.formField}
@@ -52,12 +52,11 @@ const Career = () => {
               <Grid item xs={5}>
                 <TextField
                   fullWidth
-                  type="month"
                   InputLabelProps={{
                     shrink: true
                   }}
                   value={c.startAt}
-                  onChange={e => handleChange({ position: e.target.value }, i)}
+                  onChange={e => handleChange({ startAt: e.target.value }, i)}
                 />
               </Grid>
               <Grid item xs={2}>
@@ -66,12 +65,11 @@ const Career = () => {
               <Grid item xs={5}>
                 <TextField
                   fullWidth
-                  type="month"
                   InputLabelProps={{
                     shrink: true
                   }}
                   value={c.endAt}
-                  onChange={e => handleChange({ position: e.target.value }, i)}
+                  onChange={e => handleChange({ endAt: e.target.value }, i)}
                 />
               </Grid>
             </Grid>
