@@ -6,6 +6,7 @@ export type College = {
 
 export type Colleges = {
   search: string;
+  result: CollegeResult[];
 };
 
 export type CollegeResult = {
