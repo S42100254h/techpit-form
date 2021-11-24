@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../domain/entity/rootState";
 import { Career as ICareer } from "../domain/entity/career";
 import profileActions from "../store/profile/actions";
-import { TextField, Grid, InputLabel, Typography } from "@material-ui/core";
+import { TextField, Grid, InputLabel, Typography, Button } from "@material-ui/core";
 import { PROFILE } from "../domain/services/profile";
 import useStyles from "./styles";
 
@@ -14,6 +14,10 @@ const Career = () => {
   
   const handleChange = (member: Partial<ICareer>, i: number) => {
     dispatch(profileActions.setCareer({ career: member, index: i }));
+  };
+  
+  const handleAddCareer = () => {
+    dispatch(profileActions.addCareer({}));
   };
   
   return (
@@ -74,6 +78,14 @@ const Career = () => {
           </div>
         </Fragment>
       ))}
+      <Button
+        className={classes.button}
+        onClick={handleAddCareer}
+        fullWidth
+        variant="outlined"
+      >
+        職歴を追加
+      </Button>
     </>
   );
 };
